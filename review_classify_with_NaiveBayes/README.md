@@ -23,6 +23,9 @@
    - 프로그래밍 언어 : python 3.5
    - OS: window
    - editor: Pycharm, Anaconda
+   
+   - 외부 라이브러리: KoNLPy
+      - 설치 : (KoNLPy)[https://konlpy-ko.readthedocs.io/ko/v0.4.3/install/]
 
 ### 3. 과정
 
