@@ -115,6 +115,7 @@
 ### 7. result 완성하기
 
    - scoring 확률을 어느정도 개선한후, 
+   <img src="./image/1.png" width="80%">
 
    - tag가 없는 데이터에 예측 tag를 달아줬다.
 
