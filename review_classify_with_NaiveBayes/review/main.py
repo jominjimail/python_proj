@@ -23,7 +23,7 @@ class NaiveBayes():
         self.word_prob_table =[]
 
     def text_read(self,where):
-        f = codecs.open("./source/" + where + ".txt", 'r', "utf-8")
+        f = codecs.open("./" + where + ".txt", 'r', "utf-8")
         line = f.readline()
         line2 = f.readline()
         list1 = []
@@ -56,7 +56,7 @@ class NaiveBayes():
             return False
 
     def file_len(self,where):
-        f = codecs.open("./source/" + where + ".txt", 'r', "utf-8")
+        f = codecs.open("./" + where + ".txt", 'r', "utf-8")
         for i, l in enumerate(f):
             pass
         f.close()
@@ -145,7 +145,7 @@ class NaiveBayes():
         print(corret / answernum)
 
     def result(self,where):
-        f = codecs.open("./source/" + where + ".txt", 'r', "utf-8")
+        f = codecs.open("./" + where + ".txt", 'r', "utf-8")
 
         line = f.readline()
         line2 = f.readline()
@@ -159,7 +159,7 @@ class NaiveBayes():
         f.close()
 
         # pprint(list1)
-        f2 = codecs.open("./source/" + where + ".txt", 'w+', "utf-8")
+        f2 = codecs.open("./" + "ratings_result" + ".txt", 'w+', "utf-8")
         string3 = 'id	document	label\n'
         f2.write(string3)
 
@@ -181,7 +181,7 @@ train_name ="ratings_train"
 valid_name ="ratings_valid"
 test_name = "ratings_test"
 model.train(train_name)
-#model.scoring(valid_name)
+model.scoring(valid_name)
 model.result(test_name)
 
 print("--- {}s seconds ---",format(time.time() - start))
