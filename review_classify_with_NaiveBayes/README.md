@@ -15,6 +15,8 @@
    - ratings_test.txt : label 없음
 
    - ratings_train.txt으로 나이브-베이즈 모델을 학습하여 ratings_test.txt의 lable을 예측하여 예측 결과를 ratings_result.txt에 저장한다.
+   
+   - ratings_*.txt는 ./sorce/ratings_data.zip에 있다.
 
 ### 2. 환경
 
