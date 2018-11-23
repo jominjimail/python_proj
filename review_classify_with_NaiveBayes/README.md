@@ -22,6 +22,7 @@
 
    - 프로그래밍 언어 : python 3.5
    - OS: window
+   - editor: Pycharm, Anaconda
 
 ### 3. 과정
 
