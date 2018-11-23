@@ -25,7 +25,7 @@
    - editor: Pycharm, Anaconda
    
    - 외부 라이브러리: KoNLPy
-      - 설치 : (KoNLPy)[https://konlpy-ko.readthedocs.io/ko/v0.4.3/install/]
+      - 설치 : [KoNLPy](https://konlpy-ko.readthedocs.io/ko/v0.4.3/install/)
 
 ### 3. 과정
 
