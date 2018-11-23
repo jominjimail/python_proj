@@ -151,7 +151,12 @@
      - 파일을 수정한 뒤 close()를 반드시 해줘야 수정된 상태가 저장된다.
 
 ### 8. 결과
+<img src="./image/2.png" width="80%">
+정확도: 0.8364
+<img src="./image/3.png" width="80%">
 
+<img src="./image/4.png" width="80%">
+새로 만들어진 ratings_result.txt 결과물
 
 
 
