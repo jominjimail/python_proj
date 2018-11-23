@@ -88,7 +88,7 @@
            self.word_prob_table = self.word_probability(word_count, negnum, posnum, self.k)
            ...
        ```
-
+   - 업로드된 파일은 KoNLPy의 twitter을 사용함
        - text_read() 함수를 이용해  data를 읽어오고, count_words() 함수를 이용해 단어별 빈도수를 세줍니다. word_probability() 함수를 이용해 단어별 빈도수 비율을 확률로 계산해줍니다.
        - 최종적으로 단어별 [ W, P(W | pos), P(W | neg) ] 확률을 구한 word_prob_table을 완성합니다.
 
