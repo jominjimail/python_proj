@@ -4,10 +4,12 @@ import os
 import tensorflow as tf
 from tensorflow.contrib.layers import flatten
 
+image_size = 28
+num_labels = 10
+num_channels = 1
 EPOCHS = 10
 BATCH_SIZE = 128
 
-#CNN 모델 정의 LeNet 5
 def LeNet(x):
     # Hyperparameters
     mu = 0
@@ -63,11 +65,17 @@ def LeNet(x):
 
     return logits
 
-# MNIST 데이터 다운로드
-mnist = input_data.read_data_sets("MNIST_data/", reshape=False)
+def reformat(dataset, labels):
+ dataset = dataset.reshape((-1, image_size, image_size, num_channels)).astype(np.float32)
+ return dataset, labels
+
+mnist = input_data.read_data_sets("MNIST_data/")
 X_train, y_train = mnist.train.images, mnist.train.labels
+X_train, y_train = reformat(X_train, y_train)
 X_validation, y_validation = mnist.validation.images, mnist.validation.labels
+X_validation, y_validation = reformat(X_validation, y_validation)
 X_test, y_test = mnist.test.images, mnist.test.labels
+X_test, y_test=reformat(X_test, y_test)
 
 assert(len(X_train) == len(y_train))
 assert(len(X_validation) == len(y_validation))
@@ -85,10 +93,8 @@ X_train = np.pad(X_train, ((0, 0), (2, 2), (2, 2), (0, 0)), 'constant')
 X_validation = np.pad(X_validation, ((0, 0), (2, 2), (2, 2), (0, 0)), 'constant')
 X_test = np.pad(X_test, ((0, 0), (2, 2), (2, 2), (0, 0)), 'constant')
 
-# MNIST 데이터를 3차원 형태로 reshape MNIST 데이터는 grayscale 이미지이기 때문에 3번째 차원의 값은 1 이다.
 print("Updated Image Shape: {}".format(X_train[0].shape))
 
-# 인풋 아웃풋 데이터를 받기위한 플레이스홀더를 정의
 x = tf.placeholder(tf.float32, (None, 32, 32, 1))
 y = tf.placeholder(tf.int32, (None))
 one_hot_y = tf.one_hot(y, 10)
@@ -97,20 +103,19 @@ rate = 0.001
 
 logits = LeNet(x)
 
-cross_entropy = tf.nn.softmax_cross_entropy_with_logits_v2(logits = logits, labels=one_hot_y)
+cross_entropy = tf.nn.softmax_cross_entropy_with_logits(logits = logits, labels=one_hot_y)
 loss_operation = tf.reduce_mean(cross_entropy)
 optimizer = tf.train.AdamOptimizer(learning_rate = rate)
 training_operation = optimizer.minimize(loss_operation)
 
-# 정확도를 계산하는 연산을 추가
 correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(one_hot_y, 1))
 accuracy_operation = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-# tf.train.Saver()을 이용해서 모델과 파라미터를 저장
-SAVER_DIR = "model"
+SAVER_DIR = os.getcwd()+'/model'
+SAVER_DIR_2 = SAVER_DIR+'/train'
 saver = tf.train.Saver()
-checkpoint_path = os.path.join(SAVER_DIR, "model")
 ckpt = tf.train.get_checkpoint_state(SAVER_DIR)
+ckpt_2 = tf.train.latest_checkpoint(SAVER_DIR)
 
 def evaluate(X_data, y_data):
     num_examples = len(X_data)
@@ -122,16 +127,15 @@ def evaluate(X_data, y_data):
         total_accuracy += (accuracy * len(batch_x))
     return total_accuracy / num_examples
 
-# session 을 열어 실제 학습을 진행
 with tf.Session() as sess:
-    # 모든 변수들을 초기화
-    sess.run(tf.global_variables_initializer())
+    sess.run(tf.initialize_all_variables())
 
-    # 만약 저장된 모델과 파라미터가 있으면 불러오기 (Restored)
     if ckpt and ckpt.model_checkpoint_path:
-        saver.restore(sess, ckpt.model_checkpoint_path)
+        saver.restore(sess, ckpt_2)
         test_accuracy = evaluate(X_test, y_test)
         print("Stored Test Accuracy = {:.3f}".format(test_accuracy))
+        sess.close()
+        exit()
 
     num_examples = len(X_train)
 
@@ -142,7 +146,6 @@ with tf.Session() as sess:
         for offset in range(0, num_examples, BATCH_SIZE):
             end = offset + BATCH_SIZE
             batch_x, batch_y = X_train[offset:end], y_train[offset:end]
-            # optimazor을 실행해 학습을 진행?
             sess.run(training_operation, feed_dict={x: batch_x, y: batch_y})
 
 
@@ -150,8 +153,7 @@ with tf.Session() as sess:
         print("EPOCH {} ...".format(i + 1))
         print("Validation Accuracy = {:.3f}".format(validation_accuracy))
         print()
-        # tf.train.Saver() 을 이용해서 모델과 파라미터를 저장
-        saver.save(sess, checkpoint_path, global_step=i)
+        saver.save(sess, SAVER_DIR_2, global_step=i)
 
     print("Model saved")
     test_accuracy = evaluate(X_test, y_test)
