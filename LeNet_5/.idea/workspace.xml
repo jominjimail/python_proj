@@ -2,40 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="508115e6-2137-4ca7-a3af-7b8829e10226" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/LeNet_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeNet_5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeNet_5_EN.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/checkpoint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-18688.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-18688.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-18688.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-18816.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-18816.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-18816.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-18944.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-18944.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-18944.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-19072.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-19072.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-19072.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-19200.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-19200.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-5.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-5.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-5.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-6.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-6.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-6.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-7.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-7.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-7.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-8.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-8.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-8.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-9.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-9.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model-9.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/train-5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/train-5.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/train-6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/train-6.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/train-7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/train-7.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/train-8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/train-8.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/train-9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/train-9.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,12 +22,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LeNet_5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="137" column="14" lean-forward="true" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
+            <state relative-caret-position="276">
+              <caret line="155" column="52" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="52" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -57,19 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/model/checkpoint">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/anaconda2/envs/python2/lib/python2.7/site-packages/tensorflow/python/framework/ops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="18075">
               <caret line="1229" selection-start-line="1229" selection-end-line="1229" />
             </state>
           </provider>
@@ -78,7 +47,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/anaconda2/envs/python2/lib/python2.7/site-packages/numpy/lib/arraypad.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="943">
+            <state relative-caret-position="14235">
               <caret line="951" selection-start-line="951" selection-end-line="951" />
             </state>
           </provider>
@@ -122,11 +91,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
-    <option name="y" value="40" />
-    <option name="width" value="943" />
-    <option name="height" value="813" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -187,16 +154,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="40" width="943" height="813" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.06399132" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18322763" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" weight="0.32871014" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.10402219" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -204,32 +166,46 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3939759" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32871014" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda2/envs/python2/lib/python2.7/site-packages/numpy/lib/arraypad.py">
+    <entry file="file://$PROJECT_DIR$/LeNet_5_EN.py" />
+    <entry file="file://$PROJECT_DIR$/model/train-9" />
+    <entry file="file://$PROJECT_DIR$/model/checkpoint">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="951" selection-start-line="951" selection-end-line="951" />
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeNet_5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="155" column="52" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/anaconda2/envs/python2/lib/python2.7/site-packages/tensorflow/python/framework/ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="18075">
           <caret line="1229" selection-start-line="1229" selection-end-line="1229" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeNet_5_EN.py">
+    <entry file="file://$USER_HOME$/anaconda2/envs/python2/lib/python2.7/site-packages/numpy/lib/arraypad.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="14235">
+          <caret line="951" selection-start-line="951" selection-end-line="951" />
         </state>
       </provider>
     </entry>
@@ -237,23 +213,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeNet_5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="137" column="14" lean-forward="true" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/checkpoint">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
