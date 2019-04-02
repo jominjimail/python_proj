@@ -16,36 +16,30 @@ opencv 사용하는거 친숙해지기
 
 ## OCR(optical character recognition)
 
-- 광학 문자 인식이다. 내가 스캔한 문서, 사진으로 찍은 문서 또는 이미지 파일의 텍스트를 컴퓨터나 태블릿 상에서 주욱 긁어서 복사를 해 줄 수 있게 하는 기술이다.
+광학 문자 인식이다. 내가 스캔한 문서, 사진으로 찍은 문서 또는 이미지 파일의 텍스트를 컴퓨터나 태블릿 상에서 주욱 긁어서 복사를 해 줄 수 있게 하는 기술이다.
 
-  OCR기능을 이용하게 되면 기존에 인식하지 못했던 텍스트를 인식하게 되므로, 그 텍스트를 편집하거나 다른 형태로 변환하는 것이 가능하다.
+OCR기능을 이용하게 되면 기존에 인식하지 못했던 텍스트를 인식하게 되므로, 그 텍스트를 편집하거나 다른 형태로 변환하는 것이 가능하다.
 
-- 하지만, OCR엔 과제들이 많이 남아있다. 그리고 최근엔 이러한 과제들을 딥러닝을 이용해 해결할려고 한다. 텍스트가 있다고 추정되는 영역만 바로 추출해서 CNN에 인식시키는 것도 좋은 방법이라 생각된다.
+하지만, OCR엔 과제들이 많이 남아있다. 그리고 최근엔 이러한 과제들을 딥러닝을 이용해 해결할려고 한다. 텍스트가 있다고 추정되는 영역만 바로 추출해서 CNN에 인식시키는 것도 좋은 방법이라 생각된다.
 
-- Ocr 의 step : text localization + text recongnition
+Ocr은 text localization과정과  text recongnition로 이뤄져있다.
 
-  Object detection 문제와 굉장히 비슷하다. 그럼 뭐가 더 어려울가? 
+가만히 생각해보면 문자 인식은 Object detection 문제와 굉장히 비슷한 느낌이다. 하지만 조금 다르다고 한다. 
 
-  ocr 이 더 어렵다고 한다. 왜 어려울까?
-
+- 뭐가 더 어려울까 : ocr 이 더 어렵다고 한다.
+- 왜 어려울까 : Large variation 때문이다. 
   - Various aspect ratio
+  - High density
+  - Large distortions 옷 꾸깆꾸깆
+  - Few pretrained models
+  - Various languages.
 
-    High density
+### Text localization 관련 논문 : (...*최근엔 이러한 과제들을 딥러닝을 이용해*...)
 
-    Large distortions 옷 꾸깆꾸깆
+- Regression-based : like object detection : textboxes : 2017년 논문
+- Classification-based : like semantic segmentation : pixelLink :  2018년 논문 이게 안정적이고 추세하고 한다@
 
-    Few pretrained models
 
-    Various languages.
-
-- Text localization 관련 논문 : (...*최근엔 이러한 과제들을 딥러닝을 이용해*...)
-
-  - Regression-based : like object detection : textboxes : 2017년 논문
-  - Classification-based : like semantic segmentation : pixelLink :  2018년 논문 이게 안정적이고 추세하고 한다@
-
-- Classification-based : like semantic segmentation : pixelLink :  2018년 논문 이게 안정적이고 추세하고 한다.
-
-- 
 
 ## 간단하게 생각해보자
 
@@ -69,7 +63,8 @@ imgray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 ```
 
 - RGB -> GRAY
-- <img src="./screen/1.png" width="50%">
+
+  <img src="./screen/1.png" width="50%">
 
 ```python
 kernel_gradient = np.ones((2, 2), np.uint8)
@@ -77,7 +72,8 @@ mor_result = cv2.morphologyEx(imgray, cv2.MORPH_GRADIENT, kernel_gradient)
 ```
 
 - morphology gradient 적용
-- <img src="./screen/2.png" width="50%">
+
+  <img src="./screen/2.png" width="50%">
 
 ```python
 adapt_result= cv2.adaptiveThreshold(mor_result, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 3, 10);
@@ -85,7 +81,8 @@ adapt_result= cv2.adaptiveThreshold(mor_result, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
 ```
 
 - adaptiveThreshold 적용
-- <img src="./screen/3.png" width="50%">
+
+  <img src="./screen/3.png" width="50%">
 
 ```python
 kernel_close = np.ones((9, 5), np.uint8)
@@ -93,7 +90,8 @@ mor2_result = cv2.morphologyEx(adapt_result, cv2.MORPH_CLOSE, kernel_close)
 ```
 
 - morphology close 적용
-- <img src="./screen/4.png" width="50%">
+
+  <img src="./screen/4.png" width="50%">
 
 ```python
 contours, hierarchy = cv2.findContours(mor2_result, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
