@@ -36,10 +36,9 @@ Ocr은 text localization과정과  text recongnition로 이뤄져있다.
 
 ### Text localization 관련 논문 : (...*최근엔 이러한 과제들을 딥러닝을 이용해*...)
 
-- Regression-based : like object detection : textboxes : 2017년 논문
-- Classification-based : like semantic segmentation : pixelLink :  2018년 논문 이게 안정적이고 추세하고 한다@
-
-
+- Regression-based : like object detection : [Textboxes](<https://arxiv.org/abs/1611.06779>) : 2016년 논문
+  - 최근에 업데이트 한건가 검색하니 같은저자로 [Textboxes++](https://arxiv.org/pdf/1801.02765.pdf) 2018 논문이 나왔다. 
+- Classification-based : like semantic segmentation : [pixelLink](<https://arxiv.org/abs/1801.01315>) :  2018년 논문 이게 안정적이고 추세하고 한다
 
 ## 간단하게 생각해보자
 
@@ -117,9 +116,6 @@ for c in contours:
 커널의 사이즈와 함수의 파라미터를 알맞게 조율하는 과정이 힘들었고 이에 따라 결과가 너무 다르게 나와 어떻게 조율해야 가장 좋게 나오는지 감을 잘 못잡았다.
 
 예전에 object detction 할때 object 가 있을만한곳을 추천해주는 CNN 모델이 생각났다. 최근 논문들이 이를 이용해서 성능을 개선했다는데 한번 읽어봐야 겠다. 역시 segmentation이 안정적이고 요즘 추세라고 한다. 이부분을 중점으로 공부해봐야겠다.
-
-- Regression-based : like object detection : textboxes : 2017년 논문
-- Classification-based : like semantic segmentation : pixelLink :  2018년 논문 
 
 <img src="./output/1.png" width="50%">
 
