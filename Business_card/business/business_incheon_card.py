@@ -36,10 +36,13 @@ for c in cnts:
     #approx is vertex index
     approx = cv2.approxPolyDP(c, epsilon, True)
 
+    cv2.drawContours(img, c, -1, (0, 255, 0), 3)
+
     #because business card is square
     if len(approx) == 4:
         square = approx
         break
+
 
 cv2.drawContours(img, [square], -1, (0,255,0), 2)
 #cv2.imshow('warp ', img)
